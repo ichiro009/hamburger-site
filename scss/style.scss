@@ -1,0 +1,52 @@
+@charset "utf-8";
+// foundation
+@use "./foundation/variable" as v;
+@use "./foundation/mixin" as m;
+@use "./foundation/base";
+// layout
+@use "./layout/grid";
+@use "./layout/header";
+@use "./layout/main";
+@use "./layout/footer";
+@use "./layout/aside";
+// component
+@use "./object/component/title";
+@use "./object/component/btn";
+@use "./object/component/inner";
+// project
+@use "./object/project/p-header";
+@use "./object/project/form";
+@use "./object/project/main-visual";
+@use "./object/project/branch";
+@use "./object/project/map";
+@use "./object/project/p-footer";
+@use "./object/project/p-aside";
+@use "./object/project/menu-list";
+@use "./object/project/archive-hero";
+@use "./object/project/intro";
+@use "./object/project/archive-body";
+@use "./object/project/card";
+@use "./object/project/pager";
+@use "./object/project/hero";
+@use "./object/project/title-area";
+@use "./object/project/quote";
+@use "./object/project/media";
+@use "./object/project/gallery";
+@use "./object/project/lists";
+@use "./object/project/format";
+@use "./object/project/table";
+@use "./object/project/content";
+// utility
+@use "./object/utility/display";
+@use "./object/utility/menu-filter";
+@use "./object/utility/arrow";
+
+// ファイルを分ける時こちらとは変数・mixinファイルへのパスが変わるので注意
+// @useは、同じファイル名の場合エラーが出るのでp-を付けて対応
+// @useは読み込ませる変数・mixinが無い場合もエラーが出る場合がある：要検証
+// baseにfont-family: 'M PLUS 1p', sans-serif;を使ってるのでh1以外Robotoのみ上書き
+// m.fz-vw(,)フォントサイズをpx->vw に変換するmixin archiveの途中から使用
+// 一時的にこちらに記入して随時ファイル分けをする
+// 画像のパスはCSS側に合わせる必要があるので../ で統一
+
+

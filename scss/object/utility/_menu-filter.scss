@@ -1,0 +1,27 @@
+@use "../../foundation/mixin"as m;
+
+// メニュー画面オープン時の左端のフィルター
+//クラス自体はbodyタグに付与
+.u-menu-filter::before {
+  content: " ";
+  pointer-events: none; //フィルター下のイベントを実行させる
+  position: absolute;
+  width: 12.6%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0; //フワッとアニメーションさせる為、opacityで消す
+  transition: 0.5s ease-in-out;
+  z-index: 50;
+  @include m.b-p(tab) {
+    width: 59%;
+  }
+}
+//メニューオープン時の状態
+.u-menu-filter.is-active {
+  position: fixed;
+  overflow-y: hidden;
+  &::before {
+    pointer-events: auto; //フィルター下のイベントを実行させない
+    opacity: 1; //メニューオープン時フワッっとフィルターを出す
+  }
+}

@@ -1,0 +1,19 @@
+$bg-colors: (
+  header: #fff7ef,
+  aside: #f2ede9,
+  branch: #fffdfa,
+  footer: #9d8670,
+  card: #3C2B1C,
+  btn: linear-gradient(#f2ede9, #ded8d3),
+  btn-turn: linear-gradient( #ded8d3,#f2ede9),
+);
+
+@function bg-colors($key) {
+  @return map-get($bg-colors, $key);
+}
+$gray: #707070;
+$black: #3C2A10;
+$white: #ffffff;
+$d-white:#eaeaea;
+$white-s:#f5f5f5;//singleのblockquote、code の背景色
+$purple:#4A6C9B;//blockquote の出典元の右側リンク文字色

@@ -1,0 +1,71 @@
+@use "../../foundation/mixin"as m;
+@use "../../foundation/variable"as v;
+
+.p-card {
+  max-width: 100%;
+  color: v.$white;
+  @include m.b-p(tab) {
+    display: flex;
+  }
+  &__img {
+    aspect-ratio: 336.11/230.53;
+    @include m.b-p(tab) {
+      width: 50%;//画像の幅を半分に残りをcaptionに
+      object-fit: fill;
+      aspect-ratio: normal; //元に戻す
+    }
+  }
+  &__caption {
+    background: v.bg-colors(card);
+    padding: 8.928% 21.726% 12.797% 5.059%;
+    @include m.b-p(tab) {
+      padding: 3.671%;
+    }
+    @include m.b-p(pc) {
+      padding: 2.76vw 3.281vw;
+    }
+  }
+  &__title--lv3 {
+    @include m.fz-vw(sp, 20);
+    margin-bottom: 1.2em;
+    @include m.b-p(tab) {
+      @include m.fz-vw(tab, 20);
+      margin-bottom: 1.2em;
+    }
+    @include m.b-p(pc) {
+      @include m.fz-vw(pc, 36);
+      margin-bottom: 1.305em;
+    }
+  }
+  &__title--lv4 {
+    @include m.fz-vw(sp, 16);
+    margin-bottom: 0.625em;
+    @include m.b-p(tab) {
+      @include m.fz-vw(tab, 16);
+    }
+    @include m.b-p(pc) {
+      @include m.fz-vw(pc, 24);
+      margin-bottom: 0.708em;
+    }
+  }
+  &__text {
+    @include m.fz-vw(sp, 16);
+    margin-bottom: 2.5em;
+    line-height: 1.4375;
+    font-weight: normal;
+    @include m.b-p(tab) {
+      @include m.fz-vw(tab, 16);
+    }
+    @include m.b-p(pc) {
+      @include m.fz-vw(pc, 16);
+      margin-bottom: 3.75em;
+    }
+  }
+  .c-btn--readmore {//配置関係はこちらで調整
+    margin-left: 28%;
+    @include m.b-p(tab) {
+      display: table;
+      margin: 0 auto;
+    }
+  }
+}

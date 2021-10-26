@@ -1,0 +1,65 @@
+@use "../../foundation/mixin"as m;
+@use "../../foundation/variable"as v;
+
+.p-form-box {
+  aspect-ratio: 320 /46;
+  display: flex;
+  justify-content: space-between;
+  font-size: 4.266vw;
+  position: relative;
+  @include m.b-p(tab) {
+    aspect-ratio: 546 /46;
+    font-size: 1.918vw;
+  }
+  @include m.b-p(pc) {
+    width: 35.15%;
+    font-size: 0.833vw;
+  }
+  &::before {
+    //inputタグに疑似要素は使えないのでこちらに
+    content: " ";
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 3%;
+    width: 4.266vw;
+    aspect-ratio: 1; //1だとwidthと同じheightになる
+    background: url(../icon/Loupe.png) no-repeat;
+    background-size: cover;
+    @include m.b-p(tab) {
+      width: 1.918vw;
+    }
+    @include m.b-p(pc) {
+      width: 0.833vw;
+    }
+  }
+  &__input {
+    width: 71.875%;
+    background: v.$white;
+    border: 1px solid currentColor;
+    border-radius: 10px;
+    padding-left: 10%;
+    @include m.b-p(tab) {
+      padding-left: 7%;
+    }
+    @include m.b-p(pc) {
+      padding-left: 6%;
+    }
+    &:focus {
+      border: 2px solid currentColor;
+      box-shadow:inset 1px 1px 3px currentColor;
+    }
+  }
+  &__submit {
+    width: 24.375%;
+    background: v.bg-colors(btn);
+    font-weight: bold;
+    line-height: 1.43;
+    border: 1px solid currentColor;
+    border-radius: 10px;
+    &:focus {
+      border: 2px solid currentColor;
+    }
+  }
+}

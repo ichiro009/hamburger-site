@@ -1,0 +1,23 @@
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variable" as v;
+
+.c-inner {
+  &--archive {
+    padding: 8% 5.2% 8.266%;
+    @include m.b-p(tab) {
+      padding: 4.316% 4.196% 3.597% 5.155%;
+    }
+    @include m.b-p(pc) {
+      padding: 3.863% 6.439% 4.121%;
+    }
+  }
+  &--common {//single.page共通のinner
+    padding: 8% 5.33% 47.2%;
+    @include m.b-p(tab) {
+      padding: 7.194% 7.194% 27.338%;
+    }
+    @include m.b-p(pc) {
+      padding: 3.86% 6.49% 22.73%;
+    }
+  }
+}

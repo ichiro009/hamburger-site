@@ -1,0 +1,44 @@
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variable" as v;
+
+.c-title {
+  &--lv1 {
+    line-height: 1.325;
+    font-size: 10.666vw;
+    color: v.$gray;
+    @include m.b-p(tab) {
+      font-size: 4.796vw;
+    }
+    @include m.b-p(pc) {
+      font-size: 3.333vw;
+    }
+  }
+  &--large {//p-title-areaに配置関係を設定、ここから
+    @include m.fz-vw(sp, 28);
+    @include m.b-p(tab) {
+    @include m.fz-vw(tab, 36);
+    }
+    @include m.b-p(pc) {
+    @include m.fz-vw(pc, 36);
+    }
+  }
+  &--middle {
+    @include m.fz-vw(sp, 24);
+    @include m.b-p(tab) {
+    @include m.fz-vw(tab, 28);
+    }
+    @include m.b-p(pc) {
+    @include m.fz-vw(pc, 28);
+    }
+  }
+  &--small {
+    @include m.fz-vw(sp, 20);
+    @include m.b-p(tab) {
+    @include m.fz-vw(tab, 20);
+    }
+    @include m.b-p(pc) {
+    @include m.fz-vw(pc, 20);
+    }
+  }
+}
+//p-title-areaに配置関係を設定、ここまで

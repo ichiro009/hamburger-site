@@ -1,0 +1,106 @@
+@use "../../foundation/mixin"as m;
+@use "../../foundation/variable"as v;
+
+// 後で調整しやすいように
+// p-map_title、margin-bottomの値を変数で定義
+// その半分でマイナス値がp-map_title::after白い線のbottomの値になる
+$sp:10.288;
+$tab: 5.088;
+$pc:7.088;
+
+.p-map {
+  color: v.$white;
+  position: relative;
+ 
+  &::after {
+    //g-mapの全体透過フィルター１枚目の薄い黒
+    content: "";
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  &__g-map {
+    //最下層 グーグルマップそのもの
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  &__filter {
+    //g-mapの透過フィルター２枚目濃い黒width/heightが変化する
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: 60.057%;
+    background: rgba(0, 0, 0, 0.5);
+    @include m.b-p(tab) {
+      height: 100%;
+    }
+    @include m.b-p(pc) {
+      width: 61.171%;
+    }
+  }
+  &__text-wrap {
+    //テキストが入るエリア最前
+    position: relative;
+    z-index: 5;
+    height: 100%;
+    padding: 10.666%;
+    display: flex;
+    flex-direction: column;
+    @include m.b-p(tab) {
+      justify-content: space-between;
+      padding: 4.796% 3.477% 3.796% 3.477%;
+    }
+    @include m.b-p(pc) {
+      width: 61.171%;
+    }
+  }
+  &__title {
+    font-size: 8vw;
+    margin-bottom: #{$sp}vw;//テキストまでのマージン
+    position: relative;
+    @include m.b-p(tab) {
+    margin-bottom: #{$tab}vw;
+      font-size: 3.597vw;  
+    }
+    @include m.b-p(pc) {
+      margin-bottom: #{$pc}vw;
+      font-size: 1.875vw;
+    }
+    &::after {
+      //見出しの下の白い線、テキストと見出しの中間位置にある
+      content: " ";
+      display: inline-block;
+      height: 2px;
+      width: 20vw;
+      background: v.$white;
+      position: absolute;
+      bottom: #{$sp/-2}vw;//中間の位置にあるのでマイナス半分の値
+      left: 0;
+      @include m.b-p(tab) {
+        width: 8.992vw;
+        bottom: #{$tab/-2}vw;
+      }
+      @include m.b-p(pc) {
+        width: 3.906vw;
+        bottom: #{$pc/-2}vw;
+      }
+    }
+  }
+  &__text {
+    font-size: 3.533vw;
+    line-height: 2.357;
+    @include m.b-p(tab) {
+      font-size: 1.678vw;
+      line-height: 2;
+    }
+    @include m.b-p(pc) {
+      font-size: 0.833vw;
+    }
+  }
+}

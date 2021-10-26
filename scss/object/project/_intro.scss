@@ -1,0 +1,32 @@
+@use "../../foundation/mixin"as m;
+@use "../../foundation/variable"as v;
+
+.p-intro {
+  color: v.$black;
+  &__title {
+    line-height: 1.5;
+    font-size: 7.466vw;
+    margin-bottom: 1.0714em;
+    @include m.b-p(tab) {
+      font-size: 4.316vw;
+      margin-bottom: 0.694em;
+    }
+    @include m.b-p(pc) {
+      font-size: 1.918vw;
+    }
+  }
+  &__text {
+    font-weight: normal;
+    line-height: 1.437;
+    font-size: 4.266vw;
+    margin-bottom: 1.187em;
+    @include m.b-p(tab) {
+      font-size: 1.918vw;
+      margin-bottom: 2.312em;
+    }
+    @include m.b-p(pc) {
+      font-size: 0.833vw;
+      margin-bottom: 4.375em;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@use "../../foundation/mixin"as m;
+
+.u-disp {
+  &--pc-none {
+    @include m.b-p(pc) {
+      display: none;
+    }
+  }
+  &--pc-only {
+    display: none;
+    @include m.b-p(tab) {
+      display: none;
+    }
+    @include m.b-p(pc) {
+      display: block;
+    }
+  }
+  &--sp-only {
+    @include m.b-p(tab) {
+      display: none;
+    }
+  }
+  &--sp-none {
+    display: none;
+    @include m.b-p(tab) {
+      display: block;
+    }
+  }
+}

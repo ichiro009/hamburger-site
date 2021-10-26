@@ -1,0 +1,47 @@
+@use "../../foundation/mixin"as m;
+@use "../../foundation/variable"as v;
+
+.p-hero {
+  padding-left: 6.933%;
+  width: 100%;
+  aspect-ratio: 375/225;
+  display: flex;
+  align-items: center;
+  @include m.b-p(tab){
+  padding-left: 8.311%;
+  aspect-ratio: 834/500;
+  }
+  @include m.b-p(pc){
+  aspect-ratio: 1553/500;
+  padding-left: 5.0%;
+  }
+  &--single {
+    @extend .p-hero;
+    background: url(../imges/single/single-hero-sp.png) no-repeat;
+    background-size: cover;
+    @include m.b-p(pc){
+      background: url(../imges/single/single-hero-pc.jpg) no-repeat;
+    background-size: contain;
+    }
+  }
+  &--page {
+    @extend .p-hero;
+    background: url(../imges/page/page-hero-sp.jpg) no-repeat;
+    background-size: cover;
+    @include m.b-p(pc){
+      background: url(../imges/page/page-hero-pc.jpg) no-repeat;
+    background-size: contain;
+    }
+  }
+  &__title {
+    color: v.$white;
+    @include m.fz-vw(sp,36);
+    font-family: "M PLUS 1p", sans-serif;
+    @include m.b-p(tab){
+    @include m.fz-vw(tab,60); 
+    }
+    @include m.b-p(pc){
+    @include m.fz-vw(pc,60);
+    }
+  }
+}

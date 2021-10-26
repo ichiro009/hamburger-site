@@ -1,0 +1,38 @@
+@mixin b-p($point) {
+  @if $point==tab {
+    @media (min-width:520px) {
+      @content;
+    }
+  }
+  @if $point==pc {
+    @media (min-width:960px) {
+      @content;
+    }
+  }
+}
+
+//font-sizeをpxからvwに変換する関数とmixin
+//@include m.fz-vw(sp,16) 第一引数にviewportの種類、第二引数に文字サイズpx
+@function get_vw_sp($size, $viewport: 375) {
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+@function get_vw_tab($size, $viewport: 834 ) {
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+@function get_vw_pc($size, $viewport: 1920) {
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+@mixin fz-vw($point,$font_size) {
+  @if $point==sp {
+  font-size: get_vw_sp($font_size);
+    }
+  @if $point==tab {
+    font-size: get_vw_tab($font_size);
+  }
+  @if $point==pc {
+  font-size: get_vw_pc($font_size);
+  }
+}

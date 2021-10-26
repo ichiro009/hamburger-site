@@ -1,0 +1,45 @@
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variable" as v;
+
+.p-menu-list {
+  &__title {
+    font-weight: bold;
+    font-size: 6.4vw;
+    margin-bottom: 1.6em; //単位em文字サイズに応じて余白を可変に
+    @include m.b-p(tab) {
+      font-size: 2.877vw;
+    }
+    @include m.b-p(pc) {
+      font-size: 1.25vw;
+    }
+  }
+}
+
+.p-menu-sub-list {
+  &__item {
+    font-size: 5.33vw;
+    padding-left: 1em;
+    @include m.b-p(tab) {
+      font-size: 2.398vw;
+    }
+    @include m.b-p(pc) {
+      font-size: 1.041vw;
+    }
+    &:not(:last-child) {
+      //最後以外にpbを適用
+      padding-bottom: 1.1em;
+    }
+    &:last-child {
+      //最後のpbは広めにする
+      padding-bottom: 1.545em;
+    }
+  }
+  &__link {
+    display: inline-block;//transitionを利かせるため
+    &:hover {
+      transition: .5s;
+      transform: scale(1.2);
+      font-weight: bold;
+    }
+  }
+}

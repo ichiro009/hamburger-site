@@ -1,0 +1,50 @@
+@use "../../foundation/mixin"as m;
+@use "../../foundation/variable"as v;
+
+
+.p-title-area {//c-titleに文字サイズを設定
+  //各々mbが微妙に・・違うので共通化は断念して個別に設定
+  > h2 {
+    margin-bottom: 1.071em;
+    @include m.b-p(tab) {
+      margin-bottom: 1.666em;
+    }
+  }
+  > h3 {
+    margin-bottom: 1.25em;
+    @include m.b-p(tab) {
+      margin-bottom: 2.107em;
+    }
+  }
+  > h4 {
+    margin-bottom: 1.8em;
+    @include m.b-p(tab) {
+      margin-bottom: 3em;
+    }
+  }
+  > h5 {
+    margin-bottom: 1.45em;
+    @include m.b-p(tab) {
+      margin-bottom: 3em;
+    }
+  }
+  > h6 {
+    margin-bottom: 1.5em;
+    @include m.b-p(tab) {
+      margin-bottom: 3em;
+    }
+  }
+  &__text {
+    font-weight: normal;
+    line-height: 1.4375;
+    margin-bottom: 2.125em;
+    @include m.fz-vw(sp, 16);
+    @include m.b-p(tab) {
+      @include m.fz-vw(tab, 16);
+      margin-bottom: 3.75em;
+    }
+    @include m.b-p(pc) {
+      @include m.fz-vw(pc, 16);
+    }
+  }
+}

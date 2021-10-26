@@ -1,0 +1,77 @@
+@use "../../foundation/mixin"as m;
+@use "../../foundation/variable"as v;
+
+.p-gallery {
+  &__top {
+    width: 100%;
+    aspect-ratio: 335/124;
+    margin-bottom: 8vw;
+    @include m.b-p(tab) {
+      aspect-ratio: 714/264;
+      margin-bottom: 7.194vw;
+    }
+    @include m.b-p(pc) {
+      aspect-ratio: 1353/500;
+      margin-bottom: 3.125vw;
+    }
+  }
+
+  &__pair__item {//c-media の外側
+    margin-bottom: 8vw;
+    &:first-child {
+      @include m.b-p(tab) {
+        margin-bottom: 14vw;
+      }
+      @include m.b-p(pc) {
+        margin-bottom: 3.125vw;
+      }
+    }
+    &:last-child {
+      @include m.b-p(tab) {
+        margin-bottom: 7.31vw;
+      }
+      @include m.b-p(pc) {
+        margin-bottom: 3.125vw;
+      }
+    }
+  }
+  &__middle {
+    width: 80%;
+    aspect-ratio: 267/166;
+    display: table; //マージンを効かせるために
+    margin: 0 auto;
+    margin-bottom: 8vw;
+    @include m.b-p(tab) {
+      width: 81%;
+      aspect-ratio: 581/385;
+      margin-bottom: 28vw;
+    }
+    @include m.b-p(pc) {
+      width: 42.94%;
+      margin-bottom: 3.125vw;
+    }
+  }
+  &__bottom {
+    margin-bottom: 2.78vw;
+    @include m.b-p(tab) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    @include m.b-p(pc) {
+      margin-bottom: 1.719vw;
+    }
+  }
+  &__bottom-img {
+    width: 100%;
+    margin-bottom: 5.55vw;
+    @include m.b-p(tab) {
+      width: 48.879%;
+      margin-bottom: 2.398vw;
+    }
+    @include m.b-p(pc) {
+      width: 32.372%;
+      margin-bottom: 1.041vw;
+    }
+  }
+}

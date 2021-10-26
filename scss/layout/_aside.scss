@@ -1,0 +1,7 @@
+@use "../foundation/mixin"as m;
+
+.l-aside {
+  @include m.b-p(pc) {
+    grid-area: aside;
+  }
+}

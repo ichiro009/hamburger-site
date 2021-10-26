@@ -1,0 +1,34 @@
+@use "../../foundation/mixin"as m;
+@use "../../foundation/variable"as v;
+
+.p-main-visual {
+  display: flex;
+  align-items: center;
+  padding-left:6.666%;
+  aspect-ratio: 375/285;
+  background: url(../imges/front-page/sp/mainvisual-sp.jpg) no-repeat;
+  background-size: cover;
+  background-position: center center;
+  @include m.b-p(tab) {
+    aspect-ratio: 834/285;
+    background: url(../imges/front-page/tablet/front_mainvisual_tab.jpg)
+      no-repeat;
+    background-size: contain;
+  }
+  @include m.b-p(pc) {
+    aspect-ratio: 1553/530;
+    background: url(../imges/front-page/pc/mainvisual-pc.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  &__title {
+    font-size: 10.66vw;
+    color: v.$white;
+    @include m.b-p(tab) {
+    font-size: 4.316vw;   
+    }
+    @include m.b-p(pc) {
+      font-size: 1.875vw;
+    }
+  }
+}

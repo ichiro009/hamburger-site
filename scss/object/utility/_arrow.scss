@@ -1,0 +1,31 @@
+@use "../../foundation/mixin"as m;
+@use "../../foundation/variable"as v;
+
+// p-pagerで使う矢印、疑似要素専用
+@mixin arrow-base {
+  content: "";
+  display: inline-block;
+  width: 4.2666vw;
+  aspect-ratio: 1;
+  transform: translateY(0.1em);
+  @include m.b-p(tab) {
+    width: 1.918vw;
+  }
+  @include m.b-p(pc) {
+    width: 0.833vw;
+  }
+}
+.u-arrow--left {
+  &::before {
+    @include arrow-base;
+    background: url(../icon/left-arrow.png) no-repeat;
+    background-size: cover;
+  }
+}
+.u-arrow--right {
+  &::after {
+    @include arrow-base;
+    background: url(../icon/right-arrow.png) no-repeat;
+    background-size: cover;
+  }
+}

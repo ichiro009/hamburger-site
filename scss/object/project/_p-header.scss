@@ -1,0 +1,38 @@
+@use "../../foundation/mixin"as m;
+@use "../../foundation/variable"as v;
+
+.p-header {
+  padding: 10% 8.266% 10% 6.4%;
+  background: v.bg-colors(header);
+  color: v.$gray; //ヘッダーの文字色は全て同じ色、親継承
+  position: relative;
+  @include m.b-p(tab) {
+    padding: 4.796% 17.266%;
+  }
+  @include m.b-p(pc) {
+    padding: 0 1.931% 0 4.185%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__title {
+    text-align: center;
+    margin-bottom: 10.1%;
+    @include m.b-p(tab) {
+      margin-bottom: 4.556%;
+    }
+    @include m.b-p(pc) {
+      margin-bottom: 0px;
+    }
+  }
+  &__menu-btn {//装飾はc-menu-btnに配置関係のみこちらに
+    position: absolute;
+    z-index: 100;//p-asideのz-indexより高く設定して最前面にする
+    top: 14px;
+    right: 16px;
+    &.is-active {
+    position: absolute;
+      right: 32px;
+    }
+  }
+}

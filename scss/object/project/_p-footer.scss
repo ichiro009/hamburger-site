@@ -1,0 +1,40 @@
+@use "../../foundation/mixin"as m;
+@use "../../foundation/variable"as v;
+
+.p-footer {
+  color: v.$white;
+  background:url(../imges/front-page/sp/footer-sp.png);
+  text-align: center;
+  padding: 10.4% 0 8%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  @include m.b-p(tab) {
+    padding: 4.676% 0 3.597%;
+  }
+  @include m.b-p(pc) {
+    padding: 2.031% 0 1.562%;
+  }
+  &__nav {
+    display: flex;
+    justify-content: center;
+  }
+  &__nav-item {
+    font-size: 5.333vw;
+    @include m.b-p(tab) {
+      font-size: 2.398vw;
+    }
+    @include m.b-p(pc) {
+      font-size: 1.041vw;
+    }
+  }
+  &__copyright {
+    font-size: 3.733vw;
+    @include m.b-p(tab) {
+      font-size: 1.678vw;
+    }
+    @include m.b-p(pc) {
+      font-size: 0.729vw;
+    }
+  }
+}

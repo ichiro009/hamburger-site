@@ -1,0 +1,39 @@
+@use "../../foundation/mixin"as m;
+@use "../../foundation/variable"as v;
+
+.p-aside {
+  color: v.$gray;
+  background: v.bg-colors(aside);
+  width: 87.4%;
+  height: 100vh;
+  position: fixed;
+  z-index: 50; //p-header__menu-btnのz-indexより下の数値にする
+  top: 0;
+  right: -87.4%; //通常時、画面の外側に
+  padding: 57.634% 0 0 12.481%;
+  overflow-y: scroll;
+  transition: 0.5s ease-in-out;
+  @include m.b-p(tab) {
+    transition: 0.3s ease-in-out;
+    width: 44%;
+    right: -44%; //同上
+  }
+  @include m.b-p(pc) {
+    padding: 22.343% 0 0 12.534%;
+    overflow-y: hidden; //PCサイズは、スクロールバーの表示を消す
+    position: static; //PCサイズはポジション解除
+    width: auto; //幅をgridに合わせる
+    height: auto;
+  }
+  &.is-active {
+    //menuボタンONの時
+    right: 0;
+  }
+  &__title {
+    //PCサイズのみ表示のタイトル
+    @include m.b-p(pc) {
+      font-size: 1.778vw;
+      margin-bottom: 2.5em;
+    }
+  }
+}

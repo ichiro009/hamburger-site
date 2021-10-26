@@ -1,0 +1,29 @@
+@use "../../foundation/mixin"as m;
+@use "../../foundation/variable"as v;
+
+.p-quote {
+  padding: 8.955% 4.776%;
+  margin-bottom: 1.875em;
+  @include m.fz-vw(sp, 16);
+  background: v.$white-s;
+  @include m.b-p(tab) {
+    padding: 7% 7% 8.4% 7%;
+    margin-bottom: 3.75em;
+    @include m.fz-vw(tab, 16);
+  }
+  @include m.b-p(pc) {
+    padding: 3.695%;
+    @include m.fz-vw(pc, 16);
+  }
+  &__text {
+    line-height: 1.4375;
+    margin-bottom: 1.875em;
+    @include m.b-p(tab) {
+      margin-bottom: 3.75em;
+    }
+  }
+  &__link {
+    color: v.$purple;
+    text-decoration: underline;
+  }
+}

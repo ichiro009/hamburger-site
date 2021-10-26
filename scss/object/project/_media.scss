@@ -1,0 +1,33 @@
+@use "../../foundation/mixin"as m;
+@use "../../foundation/variable"as v;
+
+.p-media {
+  aspect-ratio: 337/176;
+  display: flex;
+  justify-content: space-between;
+  @include m.b-p(tab) {
+    aspect-ratio: 714/373;
+  }
+  @include m.b-p(pc) {
+    aspect-ratio: 1354/358;
+  }
+  &__img {
+    height: 50%;
+    @include m.b-p(pc) {
+      height: 100%;
+    }
+  }
+  &__caption {
+    @include m.fz-vw(sp, 16);
+    width: 54%;
+    overflow-y: hidden;
+    font-weight: normal;
+    @include m.b-p(tab) {
+      @include m.fz-vw(tab, 16);
+    }
+    @include m.b-p(pc) {
+      width: 54.135%;
+      @include m.fz-vw(pc, 16);
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@use "../foundation/variable"as v;
+@use "../foundation/mixin"as m;
+
+.l-header {
+  grid-area: header;
+  aspect-ratio: 375/217;
+  @include m.b-p(tab) {
+    aspect-ratio: 834/217;
+  }
+  @include m.b-p(pc) {
+    aspect-ratio: 1553/217;
+  }
+}

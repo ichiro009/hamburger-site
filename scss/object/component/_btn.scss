@@ -1,0 +1,80 @@
+@use "../../foundation/mixin"as m;
+@use "../../foundation/variable"as v;
+
+// PCサイズのみ非表示のボタン、u-disp--pc-noneで非表示に
+// p-header__menu-btnに配置関係を記入
+.c-menu-btn {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 5.33vw;
+  @include m.b-p(tab) {
+    font-size: 4.796vw;
+  }//メニューオープン時文字サイズを０にして消す
+  &.is-active {
+    font-size: 0px;
+  }
+}
+
+
+//メニュー閉鎖ボタン、is-activeクラス付与時のみ表示
+
+.c-menu-btn--close.is-active {
+  position: absolute;
+  top: 14px;
+  right: 32px;
+  background: url(../icon/cross.png) no-repeat;
+  background-size: cover;
+  width: 5.33vw;
+  aspect-ratio: 1;
+  @include m.b-p(tab) {
+    width: 4.796vw;
+  }
+}
+
+//archive の詳しく見るボタン
+.c-btn--readmore {
+  font-size: 4.266vw;
+  line-height:1.062;
+  color: v.$gray;
+  background: v.$white;
+  border: 1px solid currentColor;
+  border-radius: 20px;
+  padding: 0.6em 2.625em;
+  transition: 0.3s background-color;
+  &:hover {
+    color: v.$white;
+    background: v.$gray;
+    transition: 0.3s background-color;
+  }
+  @include m.b-p(tab) {
+    font-size: 1.918vw;
+  }
+  @include m.b-p(pc) {
+    font-size: 0.833vw;
+    padding: 1.687em 6.625em;
+  }
+}
+
+
+.c-btn--large {//single/page の大きめのボタン
+  @include m.fz-vw(sp, 16);
+  font-weight: bold;
+  white-space: nowrap;
+  border-radius: 20px;
+  padding: 1.75em 8.625em;
+  background: v.bg-colors(btn);
+  box-shadow: 0 .31em;
+  &:hover {
+    transition: 0.3s;
+    opacity: .8;
+    transform: translateY(.22em);
+    box-shadow: 0 .09em;
+  }
+  @include m.b-p(tab) {
+  padding: 2.565em 11.875em;
+    @include m.fz-vw(tab, 16);
+  }
+  @include m.b-p(pc) {
+    @include m.fz-vw(pc, 16);
+  }
+}

@@ -1,0 +1,15 @@
+@use "../../foundation/mixin"as m;
+@use "../../foundation/variable"as v;
+
+.p-archive-body {
+  width: 100%;
+  margin-bottom: 16%; //一番下からページャーまでのmb
+  // &__list {
+  // }
+  &__item {
+    &:not(:last-child) {
+      //最後以外にmbを設定
+      margin-bottom: 20.5px;
+    }
+  }
+}
