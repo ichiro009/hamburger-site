@@ -1,33 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RaiseTechの最終課題">
-
-  <!--ハンバーガーのファビコン -->
-  <link rel="shortcut icon" href="icon/hamuburger.png" type="image/x-icon">
-  <!-- リセットCSS ひとまずCDNで -->
-  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-  <!-- 最後にCSSを読み込ませる -->
-  <link rel="stylesheet" href="css/style.css">
-  <!-- 半角カタカナは、エラーの原因になりうるので、全角に変更 -->
-  <title>ハンバーガーサイト</title>
-  <?php wp_head(); ?>
-</head>
-<body class="u-menu-filter">
-<div class="l-grid">
-  <header class="l-header p-header">
-    <h1 class="p-header__title c-title--lv1">Hamburger</h1>
-    <form class="p-form-box" action="archive-search.html">
-      <input class="p-form-box__input" type="search" name="search" placeholder="注文内容を検索できます">
-      <button class="p-form-box__submit" type="submit" name="submit">検索</button>
-    </form>
-    <!-- Menu はPCサイズのみ非表示、tab/sp は表示-->
-    <button class="p-header__menu-btn c-menu-btn u-disp--pc-none">Menu</button>
-  </header>
+<?php get_header(); ?>
   <main class="l-main">
     <div class="p-main-visual">
       <h2 class="p-main-visual__title">ダミーサイト</h2>
@@ -90,64 +61,9 @@
     </section>
   </main>
 
-  <!-- ここからサイドバー -->
-  <aside class="l-aside p-aside">
-    <!--PCサイズは非表示,is-activeクラス付与時のみ表示 -->
-    <button class="c-menu-btn--close u-disp--pc-none"></button>
-    <!-- Menu はPCサイズのみ表示、tab/sp は非表示-->
-    <h2 class="p-aside__title u-disp--pc-only">Menu</h2>
-    <ul class="p-menu-list">
-      <!-- バーガー -->
-      <li class="p-menu-list__item">
-        <h3 class="p-menu-list__title">バーガー</h3>
-        <ul class="p-menu-sub-list">
-          <li class="p-menu-sub-list__item"><a class="p-menu-sub-list__link" href="archive.html">ハンバーガー</a></li>
-          <li class="p-menu-sub-list__item"><a class="p-menu-sub-list__link" href="archive.html">チーズバーガー</a></li>
-          <li class="p-menu-sub-list__item"><a class="p-menu-sub-list__link" href="archive.html">テリヤキバーガー</a></li>
-          <li class="p-menu-sub-list__item"><a class="p-menu-sub-list__link" href="archive.html">アボカドバーガー</a></li>
-          <li class="p-menu-sub-list__item"><a class="p-menu-sub-list__link" href="archive.html">フィッシュバーガー</a></li>
-          <li class="p-menu-sub-list__item"><a class="p-menu-sub-list__link" href="archive.html">ベーコンバーガー</a></li>
-          <li class="p-menu-sub-list__item"><a class="p-menu-sub-list__link" href="archive.html">チキンバーガー</a></li>
-        </ul>
-      </li>
-      <!-- サイド -->
-      <li class="p-menu-list__item">
-        <h3 class="p-menu-list__title">サイド</h3>
-        <ul class="p-menu-sub-list">
-          <li class="p-menu-sub-list__item"><a class="p-menu-sub-list__link" href="archive.html">ポテト</a></li>
-          <li class="p-menu-sub-list__item"><a class="p-menu-sub-list__link" href="archive.html">サラダ</a></li>
-          <li class="p-menu-sub-list__item"><a class="p-menu-sub-list__link" href="archive.html">ナゲット</a></li>
-          <li class="p-menu-sub-list__item"><a class="p-menu-sub-list__link" href="archive.html">コーン</a></li>
-        </ul>
-      </li>
-      <!-- ドリンク -->
-      <li class="p-menu-list__item">
-        <h3 class="p-menu-list__title">ドリンク</h3>
-        <ul class="p-menu-sub-list">
-          <li class="p-menu-sub-list__item"><a class="p-menu-sub-list__link" href="archive.html">コーラ</a></li>
-          <li class="p-menu-sub-list__item"><a class="p-menu-sub-list__link" href="archive.html">ファンタ</a></li>
-          <li class="p-menu-sub-list__item"><a class="p-menu-sub-list__link" href="archive.html">オレンジ</a></li>
-          <li class="p-menu-sub-list__item"><a class="p-menu-sub-list__link" href="archive.html">アップル</a></li>
-          <li class="p-menu-sub-list__item"><a class="p-menu-sub-list__link" href="archive.html">紅茶（Ice/Hot）</a></li>
-          <li class="p-menu-sub-list__item"><a class="p-menu-sub-list__link" href="archive.html">コーヒー（Ice/Hot）</a></li>
-        </ul>
-      </li>
-    </ul>
-  </aside>
+<?php get_sidebar(); ?>
 
-  <footer class="l-footer p-footer">
-    <ul class="p-footer__nav">
-      <!-- 全角スペースは可読性の問題から非推奨なので特殊文字&emsp;に変更 -->
-      <li class="p-footer__nav-item">ショップ情報&emsp;|</li>
-      <li class="p-footer__nav-item">&emsp;ヒストリー</li>
-    </ul>
-    <p class="p-footer__copyright"><small>Copyright: RaiseTech</small></p>
-  </footer>
-
-</div>
-<?php wp_footer(); ?>
-</body>
-</html>
+<?php get_footer(); ?>
 
 
 
