@@ -43,6 +43,10 @@
     padding: 3.283% 2.985% 0px;
     @include m.b-p(tab) {
       padding: 3.361% 3.361% 0px;
+      display: flex;//テキスト量に応じて左右を可変
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
     }
     @include m.b-p(pc) {
       width: 100%;

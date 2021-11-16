@@ -467,6 +467,10 @@ th {
 @media (min-width: 520px) {
   .p-branch__item, .p-branch__item--eat-in, .p-branch__item--take-out {
     padding: 3.361% 3.361% 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
   }
 }
 @media (min-width: 960px) {

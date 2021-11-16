@@ -6,11 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="RaiseTechの最終課題">
-  <!-- グーグルフォントの読み込み -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700&family=Roboto:wght@400;700&display=swap"
-    rel="stylesheet">
+
   <!--ハンバーガーのファビコン -->
   <link rel="shortcut icon" href="icon/hamuburger.png" type="image/x-icon">
   <!-- リセットCSS ひとまずCDNで -->
@@ -19,6 +15,7 @@
   <link rel="stylesheet" href="css/style.css">
   <!-- 半角カタカナは、エラーの原因になりうるので、全角に変更 -->
   <title>ハンバーガーサイト</title>
+  <?php wp_head(); ?>
 </head>
 <body class="u-menu-filter">
 <div class="l-grid">
@@ -148,12 +145,7 @@
   </footer>
 
 </div>
-<!-- l-grid -->
-
-<!-- 一先ずCDNで jQueryを読み込ませる -->
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<!-- 上書きするので jQueryの後に記入するコードを読み込ませる -->
-<script src="JavaScript/main.js"></script>
+<?php wp_footer(); ?>
 </body>
 </html>
 
