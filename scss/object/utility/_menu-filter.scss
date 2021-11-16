@@ -6,15 +6,15 @@
   content: " ";
   pointer-events: none; //フィルター下のイベントを実行させる
   position: absolute;
-  width: 12.6%;
+  width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   opacity: 0; //フワッとアニメーションさせる為、opacityで消す
   transition: 0.5s ease-in-out;
   z-index: 50;
-  @include m.b-p(tab) {
-    width: 59%;
-  }
+  // @include m.b-p(tab) {
+  //   width: 59%;
+  // }
 }
 //メニューオープン時の状態
 .u-menu-filter.is-active {

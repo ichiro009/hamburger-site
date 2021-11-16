@@ -50,3 +50,10 @@
 // 画像のパスはCSS側に合わせる必要があるので../ で統一
 
 
+// WordPress側のCSS調整用
+// アドミンバーの仕様で出来る余白を消す
+@media screen and (max-width: 600px){
+  #wpadminbar{
+    position:fixed;
+  }
+}

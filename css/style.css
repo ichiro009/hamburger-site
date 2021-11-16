@@ -1510,17 +1510,12 @@ th {
   content: " ";
   pointer-events: none;
   position: absolute;
-  width: 12.6%;
+  width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   transition: 0.5s ease-in-out;
   z-index: 50;
-}
-@media (min-width: 520px) {
-  .u-menu-filter::before {
-    width: 59%;
-  }
 }
 
 .u-menu-filter.is-active {
@@ -1569,6 +1564,12 @@ th {
 @media (min-width: 960px) {
   .u-arrow--right::after {
     width: 0.833vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #wpadminbar {
+    position: fixed;
   }
 }
 /*# sourceMappingURL=style.css.map */
