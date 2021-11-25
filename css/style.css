@@ -271,6 +271,8 @@ th {
   }
 }
 .p-header__title {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
   text-align: center;
   margin-bottom: 10.1%;
 }

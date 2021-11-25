@@ -16,6 +16,8 @@
     align-items: center;
   }
   &__title {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
     text-align: center;
     margin-bottom: 10.1%;
     @include m.b-p(tab) {
