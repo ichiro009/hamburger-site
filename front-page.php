@@ -7,7 +7,7 @@
     <section class="p-branch">
       <ul class="p-branch__container">
         <!--Take Out  -->
-        <li class="p-branch__list"><a href="page.html" class="p-branch__item--take-out">
+        <li class="p-branch__list"><a href="<?php echo esc_url(home_url('/category/takeout/')); ?>" class="p-branch__item--take-out">
             <!-- TakeOut とEat INとでh2の色が違うので注意 -->
             <h2 class="p-branch__title--take-out">Take Out</h2>
             <div class="p-branch__bottom-box">
@@ -24,7 +24,7 @@
         </li>
       <!--Take Outここまで  -->
       <!--Eat In  -->
-        <li class="p-branch__list"><a href="page.html" class="p-branch__item--eat-in">
+        <li class="p-branch__list"><a href="<?php echo esc_url(home_url('/category/eatin/')); ?>" class="p-branch__item--eat-in">
             <!-- TakeOut とEat INとでh2の色が違うので注意 -->
             <h2 class="p-branch__title--eat-in">Eat In</h2>
             <div class="p-branch__bottom-box">

@@ -4,8 +4,19 @@
     <button class="c-menu-btn--close u-disp--pc-none"></button>
     <!-- Menu はPCサイズのみ表示、tab/sp は非表示-->
     <h2 class="p-aside__title u-disp--pc-only">Menu</h2>
-    <ul class="p-menu-list">
-      <!-- バーガー -->
+    <?php
+		wp_nav_menu(array(
+			'menu' => 'category-menu', //ここに作ったメニュー名が入ります。
+			'menu_class' => 'p-menu-list',
+			'theme_location' => 'sidebar-nav',
+			'container' => false,
+		));
+
+		?>
+
+
+     <!-- <ul class="p-menu-list">
+    
       <li class="p-menu-list__item">
         <h3 class="p-menu-list__title">バーガー</h3>
         <ul class="p-menu-sub-list">
@@ -18,7 +29,7 @@
           <li class="p-menu-sub-list__item"><a class="p-menu-sub-list__link" href="archive.html">チキンバーガー</a></li>
         </ul>
       </li>
-      <!-- サイド -->
+  
       <li class="p-menu-list__item">
         <h3 class="p-menu-list__title">サイド</h3>
         <ul class="p-menu-sub-list">
@@ -28,7 +39,7 @@
           <li class="p-menu-sub-list__item"><a class="p-menu-sub-list__link" href="archive.html">コーン</a></li>
         </ul>
       </li>
-      <!-- ドリンク -->
+   
       <li class="p-menu-list__item">
         <h3 class="p-menu-list__title">ドリンク</h3>
         <ul class="p-menu-sub-list">
@@ -40,5 +51,5 @@
           <li class="p-menu-sub-list__item"><a class="p-menu-sub-list__link" href="archive.html">コーヒー（Ice/Hot）</a></li>
         </ul>
       </li>
-    </ul>
+    </ul>  -->
   </aside>

@@ -23,10 +23,8 @@
         </a>
         <!-- h1 or divの閉じタグを出力 -->
       </<?php echo $html_tag; ?>>
-      <form class="p-form-box" action="archive-search.html">
-        <input class="p-form-box__input" type="search" name="search" placeholder="注文内容を検索できます">
-        <button class="p-form-box__submit" type="submit" name="submit">検索</button>
-      </form>
+     
+      <?php get_search_form(); ?>
       <!-- Menu はPCサイズのみ非表示、tab/sp は表示-->
       <button class="p-header__menu-btn c-menu-btn u-disp--pc-none">Menu</button>
     </header>
