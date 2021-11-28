@@ -1,8 +1,8 @@
 <?php get_header(); ?>
-    <!-- ここからmainタグ -->
+    <!-- search.php -->
     <main class="l-main">
       <div class="p-archive-hero">
-        <h2 class="p-archive-hero__title">Menu:<span class="p-archive-hero__sub-title">チーズバーガー</span></h2>
+        <h2 class="p-archive-hero__title">Menu:<span class="p-archive-hero__sub-title"><?php the_search_query();?></span></h2>
       </div>
       <div class="c-inner--archive">
         <article class="p-intro">
