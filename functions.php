@@ -1,6 +1,7 @@
 <?php
 get_template_part('functions/enqueue'); //読み込み系、
 get_template_part('functions/sidebar_custom'); //サイドバーの×ボタンの位置調整
+get_template_part('functions/pager'); //ページネーションの設定
 
 
 add_theme_support('title-tag'); //タブ上のタイトルを管理画面から使えるようにする
@@ -14,4 +15,7 @@ add_theme_support('html5', $array = array(//HTML5 でのタグの出力
   'gallery',
   'caption'
 ));
+
+
+
 

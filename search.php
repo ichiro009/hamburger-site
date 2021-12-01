@@ -1,8 +1,17 @@
 <?php get_header(); ?>
     <!-- search.php -->
     <main class="l-main">
+  
       <div class="p-archive-hero">
-        <h2 class="p-archive-hero__title">Menu:<span class="p-archive-hero__sub-title"><?php the_search_query();?></span></h2>
+      
+        <h2 class="p-archive-hero__title">Menu:<span class="p-archive-hero__sub-title">
+          <!-- $_GET['s']で検索ワードを取得して！否定で検索ワード未入力を検知 -->
+          <?php if(!$_GET['s']){ ?>
+            検索ワードが未入力です
+            <?php }else{ ?>
+              <?php the_search_query();?>
+              <?php } ?>
+        </span></h2>
       </div>
       <div class="c-inner--archive">
         <article class="p-intro">

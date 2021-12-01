@@ -3,7 +3,7 @@
 
 .p-footer {
   color: v.$white;
-  background:url(../imges/front-page/sp/footer-sp.png);
+  background: url(../imges/front-page/sp/footer-sp.png);
   text-align: center;
   padding: 10.4% 0 8%;
   display: flex;
@@ -26,6 +26,20 @@
     }
     @include m.b-p(pc) {
       font-size: 1.041vw;
+    }
+    &:first-child {
+      margin-right: 1em;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        top:50%;
+        transform:translateY(-50%);
+        right:-0.6em;
+        width: .1em;
+        height: 1em;
+        background: Currentcolor;
+      }
     }
   }
   &__copyright {

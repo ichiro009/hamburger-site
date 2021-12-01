@@ -17,8 +17,6 @@
       <ul class="p-archive-body__list">
         <?php if (have_posts()) : ?>
           <?php while (have_posts()) : the_post(); ?>
-
-
             <li class="p-archive-body__item">
               <figure class="p-card">
                 <img class="p-card__img" src="<?php the_post_thumbnail_url('full'); ?>" alt="">
@@ -26,41 +24,37 @@
                   <h3 class="p-card__title--lv3"><?php the_title(); ?></h3>
                   <h4 class="p-card__title--lv4"><?php single_cat_title(); ?></h4>
                   <p class="p-card__text">
-                  <?php echo get_the_excerpt(); ?>
+                    <?php echo get_the_excerpt(); ?>
                   </p>
-                  
-                  <button class="c-btn--readmore"><a href="<?php the_permalink(); ?>">詳しく見る</a></button>
+
+                  <a class="c-btn--readmore" href="<?php the_permalink(); ?>">詳しく見る</a>
                 </figcaption>
               </figure>
             </li>
-          <?php endwhile; ?>
+          <?php endwhile;
+        else : ?>
+          <p>表示する記事がありません</p>
         <?php endif; ?>
       </ul>
     </article>
     <!--ここまで p-archive-body  -->
     <nav class="p-pager">
       <!-- spのみ表示 -->
-      <ul class="p-pager__inner-sp u-disp--sp-only">
-        <li class="p-pager__item-sp"><a class="p-pager__link-sp u-arrow--left" href="#">&ensp;前へ</a></li>
-        <li class="p-pager__item-sp"><a class="p-pager__link-sp u-arrow--right" href="#">次へ&ensp;</a></li>
-      </ul>
+      <!--  $wp_query -> max_num_pagesで最大ページ数を取得 -->
+      <?php if ($wp_query->max_num_pages > 1) : ?>
+        <ul class="p-pager__inner-sp u-disp--sp-only">
+          <li class="p-pager__item-sp"><?php previous_posts_link('前へ'); ?></li>
+          <li class="p-pager__item-sp"><?php next_posts_link('次へ'); ?></li>
+        </ul>
+      <?php endif; ?>
       <!-- spは非表示 tab/pcのみ表示 -->
 
-      <div class="p-pager__inner u-disp--sp-none">
-        <ul class="p-pager__list ">
-          <li class="p-pager__item "><a class="p-pager__link u-arrow--left" href="#"></a></li>
-          <li class="p-pager__item "><a class="p-pager__link" href="#">1</a></li>
-          <li class="p-pager__item"><a class="p-pager__link" href="#">2</a></li>
-          <li class="p-pager__item"><a class="p-pager__link" href="#">3</a></li>
-          <li class="p-pager__item"><a class="p-pager__link" href="#">4</a></li>
-          <li class="p-pager__item"><a class="p-pager__link" href="#">5</a></li>
-          <li class="p-pager__item"><a class="p-pager__link" href="#">6</a></li>
-          <li class="p-pager__item"><a class="p-pager__link" href="#">7</a></li>
-          <li class="p-pager__item"><a class="p-pager__link" href="#">8</a></li>
-          <li class="p-pager__item "><a class="p-pager__link " href="#">9</a></li>
-          <li class="p-pager__item "><a class="p-pager__link u-arrow--right" href="#"></a></li>
-        </ul>
-      </div>
+      <!-- <div class="p-pager__inner u-disp--sp-none"> -->
+       
+        <?php  if (function_exists("pagination")) {
+            pagination($wp_query->max_num_pages);
+          }
+        ?>
     </nav>
     <!--p- pagerはここまで -->
   </div>

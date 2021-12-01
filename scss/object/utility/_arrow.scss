@@ -1,5 +1,5 @@
-@use "../../foundation/mixin"as m;
-@use "../../foundation/variable"as v;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variable" as v;
 
 // p-pagerで使う矢印、疑似要素専用
 @mixin arrow-base {
@@ -27,5 +27,33 @@
     @include arrow-base;
     background: url(../icon/right-arrow.png) no-repeat;
     background-size: cover;
+  }
+}
+// WordPress化に伴う改変コード
+.prev-link {
+  //前への矢印＜＜
+  &::before {
+    @include arrow-base;
+    background: url(../icon/left-arrow.png) no-repeat;
+    background-size: cover;
+    margin-right: 0.5em;
+  }
+  &:hover {
+    opacity: 0.7;
+  }
+}
+.next-link {
+  //次への矢印＞＞
+  &::after {
+    @include arrow-base;
+    background: url(../icon/right-arrow.png) no-repeat;
+    background-size: cover;
+    margin-left: 0.5em;
+    @include m.b-p(tab) {
+      margin-left: -0.5em;
+    }
+  }
+  &:hover {
+    opacity: 0.7;
   }
 }
