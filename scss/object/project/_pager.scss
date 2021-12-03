@@ -26,11 +26,6 @@
     //tab/pcサイズのページャー
     display: flex;
     justify-content: center;
-    // &::before {
-    //   content: "page 1/10";
-    //   transform: translateY(0.1em);
-    //   margin-right: 1.518em;
-    // }
   }
   &__item:not(:last-of-type) {
     //最後の要素以外にmrを設定
@@ -51,13 +46,12 @@
     }
   }
   //矢印の疑似要素の位置を調整(u-arrowの調整
-
   &__link {
     //リンクのpaddingをemにして文字サイズに応じて可変
     padding: 0.2em 0.5em;
   }
 }
-.p-pager__item--active {
+.p-pager__item--active {//現在のページのスタイルホバーを打ち消す
   @extend .p-pager__item;
   border: none;
   &:hover {
@@ -66,4 +60,8 @@
     color:v.$gray;
     border:none;
   }
+}
+.p-pager__count{
+  display:inline-block;
+  margin-right: 1em;
 }

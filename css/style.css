@@ -1099,6 +1099,11 @@ th {
   border: none;
 }
 
+.p-pager__count {
+  display: inline-block;
+  margin-right: 1em;
+}
+
 .p-hero, .p-hero--page, .p-hero--single {
   padding-left: 6.933%;
   width: 100%;
@@ -1554,55 +1559,16 @@ th {
   opacity: 1;
 }
 
-.u-arrow--left::before {
-  content: "";
-  display: inline-block;
-  width: 4.2666vw;
-  aspect-ratio: 1;
-  transform: translateY(0.1em);
-  background: url(../icon/left-arrow.png) no-repeat;
-  background-size: cover;
-}
-@media (min-width: 520px) {
-  .u-arrow--left::before {
-    width: 1.918vw;
-  }
-}
-@media (min-width: 960px) {
-  .u-arrow--left::before {
-    width: 0.833vw;
-  }
-}
-
-.u-arrow--right::after {
-  content: "";
-  display: inline-block;
-  width: 4.2666vw;
-  aspect-ratio: 1;
-  transform: translateY(0.1em);
-  background: url(../icon/right-arrow.png) no-repeat;
-  background-size: cover;
-}
-@media (min-width: 520px) {
-  .u-arrow--right::after {
-    width: 1.918vw;
-  }
-}
-@media (min-width: 960px) {
-  .u-arrow--right::after {
-    width: 0.833vw;
-  }
-}
-
 .prev-link::before {
   content: "";
   display: inline-block;
   width: 4.2666vw;
   aspect-ratio: 1;
-  transform: translateY(0.1em);
+  transform: translateY(0.2em);
   background: url(../icon/left-arrow.png) no-repeat;
   background-size: cover;
   margin-right: 0.5em;
+  transition: 0.5s;
 }
 @media (min-width: 520px) {
   .prev-link::before {
@@ -1614,8 +1580,15 @@ th {
     width: 0.833vw;
   }
 }
-.prev-link:hover {
+.prev-link:hover::before {
   opacity: 0.7;
+}
+@media (min-width: 520px) {
+  .prev-link:hover::before {
+    transition: 0.5s;
+    display: inline-block;
+    transform: scale(1.5);
+  }
 }
 
 .next-link::after {
@@ -1623,9 +1596,10 @@ th {
   display: inline-block;
   width: 4.2666vw;
   aspect-ratio: 1;
-  transform: translateY(0.1em);
+  transform: translateY(0.2em);
   background: url(../icon/right-arrow.png) no-repeat;
   background-size: cover;
+  transition: 0.5s;
   margin-left: 0.5em;
 }
 @media (min-width: 520px) {
@@ -1643,27 +1617,20 @@ th {
     margin-left: -0.5em;
   }
 }
-.next-link:hover {
+.next-link:hover::after {
   opacity: 0.7;
+}
+@media (min-width: 520px) {
+  .next-link:hover::after {
+    transition: 0.5s;
+    display: inline-block;
+    transform: scale(1.5);
+  }
 }
 
 @media screen and (max-width: 600px) {
   #wpadminbar {
     position: fixed;
-  }
-}
-.p-pager__inner {
-  position: relative;
-}
-
-.p-pager__count {
-  display: inline-block;
-  position: absolute;
-  left: 13%;
-}
-@media (min-width: 960px) {
-  .p-pager__count {
-    left: 28%;
   }
 }
 /*# sourceMappingURL=style.css.map */

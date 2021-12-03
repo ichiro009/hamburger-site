@@ -57,14 +57,4 @@
     position:fixed;
   }
 }
-.p-pager__inner {
-  position: relative;
-}
-.p-pager__count{
-  display:inline-block;
-  position: absolute;
-  left:13%;
-  @include m.b-p(pc){
-  left:28%;
-  }
-}
+

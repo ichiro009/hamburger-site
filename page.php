@@ -1,7 +1,7 @@
 <?php get_header(); ?>
     <main class="l-main">
       <div class="p-hero--page">
-        <h1 class="p-hero__title">h1 チーズバーガー</h1>
+        <h1 class="p-hero__title"><?php echo get_the_title(); ?> </h1>
       </div>
       <section class="p-content c-inner--common">
         <!-- タイトルエリア -->

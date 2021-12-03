@@ -18,4 +18,10 @@ add_theme_support('html5', $array = array(//HTML5 でのタグの出力
 
 
 
-
+// 検索から固定ページを除外する
+function SearchFilter($query) {
+  if ( !is_admin() && $query->is_main_query() && $query->is_search() ) {
+  $query->set( 'post_type', 'post' );
+  }
+  }
+  add_action( 'pre_get_posts','SearchFilter' );

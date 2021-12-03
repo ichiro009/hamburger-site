@@ -12,7 +12,7 @@ add_filter( 'next_posts_link_attributes', 'add_next_posts_link_class' );
 
 //tab/pcのページネーション設定
 // $range の数を増やせばぺージネーションの表示数を増やせる
-function pagination($pages = '', $range = 7) {
+function pagination($pages = '', $range = 5) {
   $showitems = ($range * 1) + 1;//ここの数値が最大表示数となる
 
   // 現在のページ数
@@ -37,8 +37,8 @@ function pagination($pages = '', $range = 7) {
   // ページ数が2ぺージ以上の場合のみ、ページネーションを表示させる
   if(1 != $pages) {
     echo '<div class="p-pager__inner u-disp--sp-none">';
-    echo '<div class="p-pager__count">page&nbsp;'.$paged.'/'.$pages.'</div>'; //
     echo '<ul class="p-pager__list">';
+    echo '<li class="p-pager__count">page&nbsp;'.$paged.'/'.$pages.'</li>'; //page 現在のページ/最大ページ
     // ２以上のページなら、「前のページ」リンクを表示
     if($paged > 1) {
       // $paged - 1 つまり、現在のページ-1 ＝前のページとなる
@@ -46,7 +46,7 @@ function pagination($pages = '', $range = 7) {
     }
 
     // ページ番号を表示（現在のページはリンクにしない）
-    // 最大ページ数の数だけforループを回す$i にページ数（1~ページの数）割り振られ最大ページでループ終了と思いきや
+    // 最大ページ数の数だけforループを回す$i にページ数（1~ページの数）割り振られ最大ページでループ
     for ($i=1; $i <= $pages; $i++) {
       // この条件分岐が複雑 1 != $pages && →総ページ数が２以上でなおかつ
       //!($i >= $paged+$range+1 || $i <= $paged-$range-1)どちら条件が成立する場合除外
@@ -64,7 +64,7 @@ function pagination($pages = '', $range = 7) {
       }
     }
 
-    // 最終ページでなければ、「次のページ」リンクを表示
+    // 最終ページでなければ、「次のページ」リンクを表示、次のページは現在のページ＋１
     if ($paged < $pages) {
       echo '<li class="next"><a class="next-link" href="' . esc_url(get_pagenum_link($paged + 1)) . '"></a></li>';
     }
