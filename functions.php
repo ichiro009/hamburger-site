@@ -8,6 +8,7 @@ add_theme_support('title-tag'); //タブ上のタイトルを管理画面から�
 add_theme_support('post-thumbnails'); //サムネイル画像を使用可能にする
 
 register_nav_menu( 'sidebar-nav', ' sidebar-nav ' );
+register_nav_menu( 'footer-nav', ' footer-nav ' );
 add_theme_support('html5', $array = array(//HTML5 でのタグの出力
   'search-form',
   'comment-form',
@@ -25,3 +26,13 @@ function SearchFilter($query) {
   }
   }
   add_action( 'pre_get_posts','SearchFilter' );
+
+
+// タイトルからサイトの説明を除去
+function remove_title_description ( $title ) {
+  if ( is_home() || is_front_page() ) {
+    unset( $title['tagline'] );
+  }
+  return $title;
+}
+add_filter( 'document_title_parts', 'remove_title_description', 10, 1 );

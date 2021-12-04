@@ -1,5 +1,5 @@
 <?php 
-//ページャー前へ・次へのリンクにclassを付与する
+//ページャー前へ・次へのaタグにclassを付与する
 function add_prev_posts_link_class() {
   return 'class="prev-link"';
 }

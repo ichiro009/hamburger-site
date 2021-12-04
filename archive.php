@@ -2,7 +2,6 @@
 <!-- archive.php -->
 <main class="l-main">
   <div class="p-archive-hero">
-
     <h1 class="p-archive-hero__title">Menu:<span class="p-archive-hero__sub-title"><?php single_cat_title(); ?></span></h1>
   </div>
   <div class="c-inner--archive">

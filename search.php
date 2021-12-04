@@ -1,9 +1,7 @@
 <?php get_header(); ?>
     <!-- search.php -->
     <main class="l-main">
-  
-      <div class="p-archive-hero">
-      
+      <div class="p-archive-hero">  
         <h2 class="p-archive-hero__title">Menu:<span class="p-archive-hero__sub-title">
           <!-- $_GET['s']で検索ワードを取得して！否定で検索ワード未入力を検知 -->
           <?php if(!$_GET['s']){ ?>
@@ -30,5 +28,4 @@
     </main>
 
  <?php get_sidebar(); ?>
-
 <?php get_footer(); ?>

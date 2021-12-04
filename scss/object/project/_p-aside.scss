@@ -17,6 +17,7 @@
     transition: 0.3s ease-in-out;
     width: 44%;
     right: -44%; //同上
+    padding-top: 30%;
   }
   @include m.b-p(pc) {
     padding: 22.343% 0 0 12.534%;

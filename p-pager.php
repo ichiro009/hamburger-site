@@ -1,4 +1,4 @@
-  <!--ここまで p-archive-body  -->
+<!-- archive.php とsearch.php のテンプレートファイル -->
    
   <nav class="p-pager">
       <!-- spのみ表示 -->
@@ -15,4 +15,4 @@
           }
         ?>
     </nav>
-    <!--p- pagerはここまで -->
+ 

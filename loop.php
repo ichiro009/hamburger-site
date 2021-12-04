@@ -1,3 +1,4 @@
+<!-- archive.php とsearch.php のテンプレートファイル -->
 <article class="p-archive-body">
       <ul class="p-archive-body__list">
         <?php if (have_posts()) : ?>
