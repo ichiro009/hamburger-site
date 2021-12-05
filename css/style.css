@@ -1155,13 +1155,12 @@ th {
   }
 }
 .p-hero--single {
-  background: url(../imges/single/single-hero-sp.png) no-repeat;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 @media (min-width: 960px) {
   .p-hero--single {
-    background: url(../imges/single/single-hero-pc.jpg) no-repeat;
-    background-size: contain;
+    background-position: center center;
   }
 }
 .p-hero--page {
@@ -1176,6 +1175,7 @@ th {
 }
 .p-hero__title {
   color: #ffffff;
+  text-shadow: 2px 1px 10px #333;
   font-size: 9.6vw;
   font-family: "M PLUS 1p", sans-serif;
 }

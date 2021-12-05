@@ -17,11 +17,11 @@
   }
   &--single {
     @extend .p-hero;
-    background: url(../imges/single/single-hero-sp.png) no-repeat;
+    background-repeat:no-repeat;
     background-size: cover;
     @include m.b-p(pc){
-      background: url(../imges/single/single-hero-pc.jpg) no-repeat;
-    background-size: contain;
+     background-position: center center;
+    // background-size: contain;
     }
   }
   &--page {
@@ -35,6 +35,7 @@
   }
   &__title {
     color: v.$white;
+    text-shadow: 2px 1px 10px #333;
     @include m.fz-vw(sp,36);
     font-family: "M PLUS 1p", sans-serif;
     @include m.b-p(tab){
