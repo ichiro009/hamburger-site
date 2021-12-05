@@ -717,9 +717,6 @@ th {
     font-size: 1.041vw;
   }
 }
-.p-footer__nav > li:hover {
-  border-bottom: 1px solid currentColor;
-}
 .p-footer__nav > li:first-child {
   margin-right: 1em;
   position: relative;
@@ -746,6 +743,34 @@ th {
   .p-footer__copyright {
     font-size: 0.729vw;
   }
+}
+
+.p-footer__nav > li {
+  position: relative;
+}
+.p-footer__nav > li:first-of-type::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0%;
+  height: 0.077em;
+  background: currentColor;
+  transition: 0.5s;
+  right: 0;
+}
+.p-footer__nav > li:nth-of-type(2)::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0%;
+  height: 0.077em;
+  background: currentColor;
+  transition: 0.5s;
+  left: 0;
+}
+.p-footer__nav > li:hover:first-of-type::before, .p-footer__nav > li:hover:nth-of-type(2)::before {
+  width: 100%;
+  transition: 0.5s;
 }
 
 .p-aside {

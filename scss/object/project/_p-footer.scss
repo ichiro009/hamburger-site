@@ -1,5 +1,5 @@
-@use "../../foundation/mixin"as m;
-@use "../../foundation/variable"as v;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variable" as v;
 
 .p-footer {
   color: v.$white;
@@ -19,7 +19,7 @@
     display: flex;
     justify-content: center;
   }
-  &__nav >li {
+  &__nav > li {
     font-size: 5.333vw;
     @include m.b-p(tab) {
       font-size: 2.398vw;
@@ -27,19 +27,16 @@
     @include m.b-p(pc) {
       font-size: 1.041vw;
     }
-    &:hover{
-      border-bottom: 1px solid currentColor;
-    }
     &:first-child {
       margin-right: 1em;
       position: relative;
       &::after {
         content: "";
         position: absolute;
-        top:50%;
-        transform:translateY(-50%);
-        right:-0.6em;
-        width: .1em;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -0.6em;
+        width: 0.1em;
         height: 1em;
         background: Currentcolor;
       }
@@ -52,6 +49,36 @@
     }
     @include m.b-p(pc) {
       font-size: 0.729vw;
+    }
+  }
+}
+// 少し複雑なのでホバーアニメーション関連のコードを分けて記載
+@mixin line-common{//下線の共通部分をmixinで定義
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0%;
+  height: 0.077em;
+  background:currentColor;
+  transition: 0.5s;
+}
+.p-footer__nav {
+  & > li {
+    position: relative;
+    &:first-of-type::before {
+     @include line-common;
+     right:0;
+    }
+    &:nth-of-type(2)::before {
+      @include line-common;
+      left: 0;
+    }
+    &:hover {
+      &:first-of-type::before,
+      &:nth-of-type(2)::before {
+        width: 100%;
+        transition: 0.5s;
+      }
     }
   }
 }
