@@ -2,7 +2,7 @@
 get_template_part('functions/enqueue'); //読み込み系、
 get_template_part('functions/sidebar_custom'); //サイドバーの×ボタンの位置調整
 get_template_part('functions/pager'); //ページネーションの設定
-
+get_template_part('functions/title'); //トップページのタイトルからタイトルの説明を除去
 
 add_theme_support('title-tag'); //タブ上のタイトルを管理画面から使えるようにする
 add_theme_support('post-thumbnails'); //サムネイル画像を使用可能にする
@@ -27,12 +27,3 @@ function SearchFilter($query) {
   }
   add_action( 'pre_get_posts','SearchFilter' );
 
-
-// タイトルからサイトの説明を除去
-function remove_title_description ( $title ) {
-  if ( is_home() || is_front_page() ) {
-    unset( $title['tagline'] );
-  }
-  return $title;
-}
-add_filter( 'document_title_parts', 'remove_title_description', 10, 1 );
