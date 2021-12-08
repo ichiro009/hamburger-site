@@ -1,7 +1,8 @@
-@use "../../foundation/mixin"as m;
-@use "../../foundation/variable"as v;
+@use "../../foundation/mixin" as m;
+@use "../../foundation/variable" as v;
 
 .p-content {
+  min-height: 100vh;
   color: v.$black;
   & .c-btn--large {
     margin-bottom: 1.875em;
@@ -17,4 +18,27 @@
     }
   }
 }
+  .p-content--single {
+    @extend .p-content;
+    h2 {
+      @include m.fz-vw(sp, 28);
+      margin-bottom: 1em;
+      @include m.b-p(tab) {
+        @include m.fz-vw(tab, 36);
+      }
+      @include m.b-p(pc) {
+        @include m.fz-vw(pc, 36);
+      }
+    }
+    p {
+      @include m.fz-vw(sp, 16);
+      margin-bottom: 1em;
+      @include m.b-p(tab) {
+        @include m.fz-vw(tab, 16);
+      }
+      @include m.b-p(pc) {
+        @include m.fz-vw(pc, 16);
+      }
+    }
+  }
 
