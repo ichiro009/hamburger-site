@@ -13,10 +13,14 @@
       </div>
       <div class="c-inner--archive">
         <article class="p-intro">
-          <h2 class="p-intro__title">小見出しが入ります</h2>
-          <p class="p-intro__text">
-            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-          </p>
+          <h2 class="p-intro__title"><?php the_search_query();?></h2>
+         <p>
+          <?php
+          $cat = get_the_category();
+          $cat = $cat[0];
+          echo category_description($cat->cat_ID); ?>
+         </p>
+           
         </article>
         <!-- ここからp-archive-body -->
       <?php get_template_part('loop'); ?>

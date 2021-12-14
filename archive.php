@@ -6,16 +6,18 @@
   </div>
   <div class="c-inner--archive">
     <article class="p-intro">
-      <h2 class="p-intro__title">小見出しが入ります</h2>
-      <p class="p-intro__text">
-        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+      <h2 class="p-intro__title"><?php single_cat_title(); ?></h2>
+      <p>
+        <?php echo category_description(); ?>
       </p>
+
+
     </article>
     <!-- ここからp-archive-body -->
-<?php get_template_part('loop'); ?>
+    <?php get_template_part('loop'); ?>
     <!--ここまで p-archive-body  -->
-   
-<?php get_template_part('p-pager'); ?>
+
+    <?php get_template_part('p-pager'); ?>
   </div>
   <!-- c-inner--archiveここまで -->
 </main>

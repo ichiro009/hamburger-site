@@ -956,20 +956,20 @@ th {
     font-size: 1.918vw;
   }
 }
-.p-intro__text {
+.p-intro > p {
   font-weight: normal;
   line-height: 1.437;
   font-size: 4.266vw;
   margin-bottom: 1.187em;
 }
 @media (min-width: 520px) {
-  .p-intro__text {
+  .p-intro > p {
     font-size: 1.918vw;
     margin-bottom: 2.312em;
   }
 }
 @media (min-width: 960px) {
-  .p-intro__text {
+  .p-intro > p {
     font-size: 0.833vw;
     margin-bottom: 4.375em;
   }
@@ -1694,5 +1694,8 @@ th {
   #wpadminbar {
     position: fixed;
   }
+}
+.u-min-height100vh {
+  min-height: 100vh;
 }
 /*# sourceMappingURL=style.css.map */

@@ -5,7 +5,13 @@
   </div>
   <section class="p-content c-inner--common">
     <!-- タイトルエリア -->
-    <div class="p-title-area">
+    <?php if (have_posts()) : ?>
+      <?php while (have_posts()) : the_post(); ?>
+        <?php the_content(); ?>
+      <?php endwhile; ?>
+    <?php endif; ?>
+
+    <!-- <div class="p-title-area">
       <h2 class="c-title--large">見出しh2</h2>
       <p class="p-title-area__text">
         Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト。Pタグテキスト
@@ -14,17 +20,17 @@
       <h4 class="c-title--small">見出しh4</h4>
       <h5 class="c-title--small">見出しh5</h5>
       <h6 class="c-title--small">見出しh6</h6>
-    </div>
+    </div> -->
     <!--Blockquoteエリア  -->
-    <blockquote class="p-quote" cite="引用元URL">
+    <!-- <blockquote class="p-quote" cite="引用元URL">
       <p class="p-quote__text">Blockquote
         引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ引用タグ
       </p>
       <cite class="p-quote__url">出典元：<a class="p-quote__link" href="引用元UR">○○○○○○○○○○○○</a></cite>
-    </blockquote>
+    </blockquote> -->
     <!--画像エリア  -->
 
-    <article class="p-gallery">
+    <!-- <article class="p-gallery">
       <img class="p-gallery__top" src="<?php echo get_theme_file_uri(); ?>./imges/common/sp/top-burger-sp.png" alt="ボリューミーなハンバーガーと皮つきポテトの画像">
       <ul class="p-gallery__pair">
         <li class="p-gallery__pair__item">
@@ -66,9 +72,9 @@
         <img class="p-gallery__bottom-img" src="<?php echo get_theme_file_uri(); ?>./imges/common/sp/loop-burger-sp.jpg" alt="ボリューミーなハンバーガーと皮つきポテトの画像">
         <img class="p-gallery__bottom-img" src="<?php echo get_theme_file_uri(); ?>./imges/common/sp/loop-burger-sp.jpg" alt="ボリューミーなハンバーガーと皮つきポテトの画像">
       </div>
-    </article>
+    </article> -->
     <!-- リストエリア -->
-    <div class="p-lists">
+    <!-- <div class="p-lists">
       <ol class="p-lists__list">
         <li class="p-lists__item">リストリストリスト</li>
         <li class="p-lists__item">
@@ -103,9 +109,9 @@
         <li class="p-lisst__item">リストリストリスト
         </li>
       </ul>
-    </div>
+    </div> -->
     <!-- コードエリア -->
-    <pre class="p-format">
+    <!-- <pre class="p-format">
           <code class="p-format__code">
 &lt;html&gt;
     &lt;head&gt;
@@ -114,9 +120,9 @@
     &lt;/body&gt;
 &lt;/html&gt;
           </code>
-        </pre>
+        </pre> -->
     <!-- テーブルエリア -->
-    <table class="p-table">
+    <!-- <table class="p-table">
       <tr class="p-table__row">
         <th class="p-table__head">テーブル</th>
         <td class="p-table__text">テーブル</td>
@@ -133,11 +139,11 @@
         <th class="p-table__head">テーブル</th>
         <td class="p-table__text">テーブル</td>
       </tr>
-    </table>
+    </table> -->
     <!--ボタン  -->
-    <button class="c-btn--large">ボタン</button>
+    <!-- <button class="c-btn--large">ボタン</button> -->
     <!-- bold テキスト -->
-    <p class="p-content__text-bold">boldboldboldboldboldboldbold</p>
+    <!-- <p class="p-content__text-bold">boldboldboldboldboldboldbold</p> -->
   </section>
 </main>
 

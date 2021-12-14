@@ -23,7 +23,7 @@
             </li>
           <?php endwhile;
         else : ?>
-          <p>表示する記事がありません</p>
+          <p class="p-card__text">表示する記事がありません</p>
         <?php endif; ?>
       </ul>
     </article>

@@ -21,7 +21,9 @@ add_theme_support('html5', $array = array(//HTML5 でのタグの出力
 
 
 
-
+//カテゴリー説明文から自動で付与されるpタグを除去
+// 参考URLhttp://www.02320.net/erase-wpautop-from-term-description/
+remove_filter( 'term_description', 'wpautop' );
 
 
 
