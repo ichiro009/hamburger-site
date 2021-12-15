@@ -135,3 +135,8 @@
     }
   }
 }
+// 追加のホバーアニメーション
+.p-branch__list:hover{
+  filter:drop-shadow( 3px 3px 3px red );
+  opacity: .7;
+}
