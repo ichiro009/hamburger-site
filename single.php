@@ -5,7 +5,7 @@
     <h1 class="p-hero__title"><?php the_title(); ?></h1>
   </div>
 
-  <section class="p-content--single c-inner--common">
+  <section class="p-content c-inner--common">
     <?php if (have_posts()) : ?>
       <?php while (have_posts()) : the_post(); ?>
         <?php the_content(); ?>

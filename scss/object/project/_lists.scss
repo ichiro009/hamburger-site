@@ -1,7 +1,7 @@
 @use "../../foundation/mixin"as m;
 @use "../../foundation/variable"as v;
 
-.p-lists {
+.p-content ul,.p-content ol {
   @include m.fz-vw(sp, 16);
   @include m.b-p(tab) {
     padding-left: 3.125em;
@@ -11,18 +11,21 @@
     @include m.fz-vw(pc, 16);
   }
 }
-.p-lists > ol:last-of-type {
+.p-content ol:last-of-type {
   //上側のリストの一番下の余白
-  margin-bottom: 3.75em;
+  margin: 3.75em 0;
 }
-.p-lists > ul:last-of-type {
+.p-content ul:last-of-type {
   //下側のリストの一番下の余白
-  margin-bottom: 1.875em;
+  margin: 1.875em 0;
   @include m.b-p(tab){
-  margin-bottom: 3.75em;
+  margin: 3.75em 0;
   }
 }
 
-.p-sub-list {//各々の真ん中のリストの余白
-  padding: 1.25em 0 1.25em 1em;
-}
+// .p-content ul  ul{//各々の真ん中のリストの余白
+//   padding: 1.25em 0 1.25em 1em;
+// }
+// .p-content ol  ol{//各々の真ん中のリストの余白
+//   padding: 1.25em 0 1.25em 1em;
+// }

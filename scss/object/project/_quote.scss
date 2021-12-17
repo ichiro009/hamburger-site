@@ -1,7 +1,7 @@
 @use "../../foundation/mixin"as m;
 @use "../../foundation/variable"as v;
-
-.p-quote {
+// WordPress化に伴いクラス及びセレクターを変更
+.wp-block-quote {
   padding: 8.955% 4.776%;
   margin-bottom: 1.875em;
   @include m.fz-vw(sp, 16);
@@ -15,14 +15,14 @@
     padding: 3.695%;
     @include m.fz-vw(pc, 16);
   }
-  &__text {
+  p {
     line-height: 1.4375;
     margin-bottom: 1.875em;
     @include m.b-p(tab) {
       margin-bottom: 3.75em;
     }
   }
-  &__link {
+  cite {
     color: v.$purple;
     text-decoration: underline;
   }

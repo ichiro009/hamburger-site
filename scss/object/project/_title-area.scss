@@ -1,40 +1,60 @@
 @use "../../foundation/mixin"as m;
 @use "../../foundation/variable"as v;
 
-
-.p-title-area {//c-titleに文字サイズを設定
+// WordPress化に伴いクラス及びセレクターを変更
+.p-content {//c-titleに文字サイズを設定
   //各々mbが微妙に・・違うので共通化は断念して個別に設定
-  > h2 {
+   h2 {
     margin-bottom: 1.071em;
+    @include m.fz-vw(sp, 28);
     @include m.b-p(tab) {
       margin-bottom: 1.666em;
+      @include m.fz-vw(tab, 36);
+    }
+    @include m.b-p(pc) {
+      @include m.fz-vw(pc, 36);
     }
   }
-  > h3 {
+   h3 {
+    @include m.fz-vw(sp, 24);
     margin-bottom: 1.25em;
     @include m.b-p(tab) {
+      @include m.fz-vw(tab, 28);
       margin-bottom: 2.107em;
     }
+    @include m.b-p(pc) {
+      @include m.fz-vw(pc, 28);
+    
+    }
   }
-  > h4 {
+  h4,h5,h6 {//h4 h5 h6 の見出し
+    @include m.fz-vw(sp, 20);
+    @include m.b-p(tab) {
+    @include m.fz-vw(tab, 20);
+    }
+    @include m.b-p(pc) {
+    @include m.fz-vw(pc, 20);
+    }
+  }
+   h4 {
     margin-bottom: 1.8em;
     @include m.b-p(tab) {
       margin-bottom: 3em;
     }
   }
-  > h5 {
+   h5 {
     margin-bottom: 1.45em;
     @include m.b-p(tab) {
       margin-bottom: 3em;
     }
   }
-  > h6 {
+   h6 {
     margin-bottom: 1.5em;
     @include m.b-p(tab) {
       margin-bottom: 3em;
     }
   }
-  &__text {
+  p {
     font-weight: normal;
     line-height: 1.4375;
     margin-bottom: 2.125em;
